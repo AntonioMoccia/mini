@@ -24,3 +24,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.line{
+    overflow-y:hidden;
+}
+
+.word
+{
+  transform: translateY(100%);
+}
