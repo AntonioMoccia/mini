@@ -66,7 +66,7 @@ function Copy({ children, animateOnScroll = true, delay = 0 }) {
           ...animationProps,
           scrollTrigger: {
             trigger: containerRef.current,
-            start: window.innerWidth <= 640 ? "top 85%" : "top 75%",
+            start: window.innerWidth <= 640 ? "top 90%" : "top 75%",
             /* markers: true, */
             toggleActions: "play pause resume reset",
           },

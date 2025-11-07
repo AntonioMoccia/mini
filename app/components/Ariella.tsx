@@ -22,8 +22,8 @@ function Ariella() {
         const mm = gsap.matchMedia(bottleRef.current)
         mm.add("(max-width: 640px)", (context) => {
             tl.to(bottleRef.current, {
-                scale: 0.6,
-                top: '30%',
+                scale: 0.8,
+                top: '35vh',
                 rotate: '10deg',
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -49,9 +49,9 @@ function Ariella() {
     return (
         <>
             <div ref={containerRef} className='h-screen top-0 left-0 w-screen absolute z-20'>
-                <div ref={bottleRef} className=' absolute top-[50%] left-[50%] mt-10 transform translate-x-[-50%] translate-y-[-50%] scale-150'>
+                <div ref={bottleRef} className=' absolute top-[50%] left-[50%] mt-3 transform translate-x-[-50%] translate-y-[-50%] scale-150'>
                     <Image
-                        className=' max-h-full mt-10'
+                        className=' max-h-[65vh] w-auto'
                         src="/media/bottle.png"
                         alt="Next.js logo"
                         width={200}
@@ -74,24 +74,24 @@ function Ariella() {
                     />
                 </div>
                 {/* Second section */}
-                <div ref={secondSectionRef} className=' px-5 md:pb-0 pb-5 w-screen h-screen flex justify-center items-center flex-col'>
+                <div ref={secondSectionRef} className=' px-5 md:pb-0 pb-10 w-screen h-screen flex justify-center items-center flex-col'>
 
                     <div className=' w-full h-full grid grid-cols-12 max-w-[1442px]'>
                         <div className='  flex flex-col justify-end md:justify-center col-span-12 md:col-span-6 '>
                             <div className=' overflow-y-hidden'>
                                 <Copy>
-                                    <h1 className=' md:text-5xl text-2xl font-bold '>Un solo prodotto </h1>
+                                    <h1 className=' md:text-4xl text-xl font-bold '>Un solo prodotto </h1>
                                 </Copy>
                             </div>
                             <div className=' overflow-y-hidden'>
                                 <Copy>
 
-                                    <h1 className=' md:text-5xl text-2xl font-bold '>la nostra essenza.</h1>
+                                    <h1 className=' md:text-4xl text-xl font-bold '>la nostra essenza.</h1>
                                 </Copy>
                             </div>
                             <div className=' overflow-y-hidden'>
                                 <Copy>
-                                    <p className=' mt-5'>
+                                    <p className=' text-base md:text-lg mt-5'>
                                         Ogni goccia del nostro olio extravergine d’oliva racchiude il lavoro di un anno intero, dalle nostre olive selezionate alla spremitura a freddo nel frantoio di famiglia.Dal colore verde intenso al profumo fruttato, fino al gusto equilibrato tra dolce e amaro, è un olio pensato per chi cerca autenticità e purezza.
                                     </p>
                                 </Copy>
