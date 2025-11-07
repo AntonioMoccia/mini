@@ -2,6 +2,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger, SplitText } from 'gsap/all'
+import { ScrollTrigger, SplitText } from 'gsap/all'
 import Image from 'next/image'
 import { useRef } from 'react'
 import Copy from './Copy'
@@ -12,9 +13,10 @@ function Ariella() {
     const bottleRef = useRef(null)
     const containerRef = useRef(null)
     const secondSectionRef = useRef(null)
+    const secondSectionRef = useRef(null)
 
     useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger)
+        gsap.registerPlugin(ScrollTrigger, SplitText)
         const tl = gsap.timeline()
 
         if (!bottleRef.current) return
@@ -104,3 +106,4 @@ function Ariella() {
 }
 
 export default Ariella
+

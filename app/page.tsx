@@ -25,7 +25,7 @@ export default function Home() {
     <div className=" min-h-screen  bg-zinc-50 font-sans ">
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main className=" min-h-screen w-screen bg-black ">
+          <main className=" min-h-screen w-screen px-5  bg-black ">
             <Ariella />
           </main>
         </div>
