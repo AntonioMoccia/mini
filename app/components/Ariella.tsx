@@ -22,7 +22,7 @@ function Ariella() {
         const mm = gsap.matchMedia(bottleRef.current)
         mm.add("(max-width: 640px)", (context) => {
             tl.to(bottleRef.current, {
-                scale: 0.9,
+                scale: 0.6,
                 top: '30%',
                 rotate: '10deg',
                 scrollTrigger: {
