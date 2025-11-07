@@ -13,6 +13,7 @@ function Ariella() {
     const containerRef = useRef(null)
     const secondSectionRef = useRef(null)
 
+
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger, SplitText)
         const tl = gsap.timeline()
