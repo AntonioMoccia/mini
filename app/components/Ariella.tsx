@@ -14,7 +14,7 @@ function Ariella() {
     const secondSectionRef = useRef(null)
 
     useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger)
+        gsap.registerPlugin(ScrollTrigger, SplitText)
         const tl = gsap.timeline()
 
         if (!bottleRef.current) return
@@ -104,3 +104,4 @@ function Ariella() {
 }
 
 export default Ariella
+
