@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
@@ -68,7 +68,6 @@ function Copy({ children, animateOnScroll = true, delay = 0 }) {
             trigger: containerRef.current,
             start: window.innerWidth <= 640 ? "top 90%" : "top 75%",
             /* markers: true, */
-            toggleActions: "play pause resume reset",
           },
         });
       } else {

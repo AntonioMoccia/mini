@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import { ScrollTrigger, SplitText } from 'gsap/all'
 import Image from 'next/image'
 import { useRef } from 'react'
-import Copy from './Copy'
+import AnimatedText from './AnimatedText'
 
 
 
@@ -12,7 +12,8 @@ function Ariella() {
     const bottleRef = useRef(null)
     const containerRef = useRef(null)
     const secondSectionRef = useRef(null)
-
+    const animatedImageContainerRef = useRef(null)
+    const animatedImageRef = useRef(null)
 
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger, SplitText)
@@ -27,6 +28,7 @@ function Ariella() {
                 rotate: '10deg',
                 scrollTrigger: {
                     trigger: containerRef.current,
+
                     pin: true,
                     scrub: true,
                 }
@@ -41,6 +43,18 @@ function Ariella() {
                     trigger: containerRef.current,
                     pin: true,
                     scrub: true,
+                }
+            })
+        })
+        mm.add("(min-width: 641px)", (context) => {
+            tl.from(animatedImageRef.current, {
+                height: 0,
+                duration: 1,
+                ease: "power4.in",
+                scrollTrigger: {
+                    start: "top center",
+                    trigger: animatedImageContainerRef.current,
+                    markers: true,
                 }
             })
         })
@@ -60,7 +74,7 @@ function Ariella() {
                     />
                 </div>
             </div>
-            <div className='container'>
+            <div className='container_sections'>
                 {/* Hero section
                     bg-[url(/media/hero-bg.png)]
                 */}
@@ -79,26 +93,72 @@ function Ariella() {
                     <div className=' w-full h-full grid grid-cols-12 max-w-[1442px]'>
                         <div className='  flex flex-col justify-end md:justify-center col-span-12 md:col-span-6 '>
                             <div className=' overflow-y-hidden'>
-                                <Copy>
+                                <AnimatedText>
                                     <h1 className=' md:text-4xl text-xl font-bold '>Un solo prodotto </h1>
-                                </Copy>
+                                </AnimatedText>
                             </div>
                             <div className=' overflow-y-hidden'>
-                                <Copy>
-
+                                <AnimatedText>
                                     <h1 className=' md:text-4xl text-xl font-bold '>la nostra essenza.</h1>
-                                </Copy>
+                                </AnimatedText>
                             </div>
                             <div className=' overflow-y-hidden'>
-                                <Copy>
+                                <AnimatedText>
                                     <p className=' text-base md:text-lg mt-5'>
                                         Ogni goccia del nostro olio extravergine d’oliva racchiude il lavoro di un anno intero, dalle nostre olive selezionate alla spremitura a freddo nel frantoio di famiglia.Dal colore verde intenso al profumo fruttato, fino al gusto equilibrato tra dolce e amaro, è un olio pensato per chi cerca autenticità e purezza.
                                     </p>
-                                </Copy>
+                                </AnimatedText>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                {/** TERZA SEZIONE */}
+                <div className='px-5 md:pb-0 pb-10 w-screen flex justify-center items-center flex-col'>
+                    <div className='  w-full h-full max-w-[1442px] flex justify-center items-center px-5'>
+                        <div className=' w-full grid grid-cols-12  '>
+
+                            <div className='col-span-8 col-start-1  flex justify-start items-center '>
+                                <div className=' max-w-lg'>
+                                    <div className='w-full '>
+                                        <AnimatedText>
+                                            <h1 className=' md:text-4xl text-xl font-bold'>
+                                                OLIO EXTRAVERGINE
+                                                D’OLIVA 100% <span>ITALIANO</span>
+                                            </h1>
+                                        </AnimatedText>
+                                    </div>
+                                    <div className='w-full '>
+                                        <AnimatedText>
+                                            <p>
+                                                Olio d’oliva di categoria superiore ottenuto esclusivamente mediante procedimenti cannici.
+                                                Estratto a freddo.
+                                            </p>
+                                        </AnimatedText>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div className=' col-span-4 col-start-9 '>
+                                <div className=' w-[30vw] h-[70vh] bg-green-600 flex justify-start flex-col items-start'>
+                                    <div ref={animatedImageContainerRef} className=' flex justify-center items-start h-full w-full '>
+                                        <div className='relative overflow-hidden w-full h-full' ref={animatedImageRef}>
+                                            <Image alt="lkadnsfjkasndjfn" src={'/media/bottle_with_olive.png'}
+                                                fill
+                                                priority
+                                                className="object-cover object-top z-10"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className=' h-screen w-screen' />
+
             </div>
         </>
     )
