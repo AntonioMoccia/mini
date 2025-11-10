@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
-function AnimatedText({ children, animateOnScroll = true, delay = 0 }) {
+function Copy({ children, animateOnScroll = true, delay = 0 }) {
   const containerRef = useRef(null);
   const elementRef = useRef([]);
   const splitRef = useRef([]);
@@ -61,6 +61,7 @@ function AnimatedText({ children, animateOnScroll = true, delay = 0 }) {
       };
 
       if (animateOnScroll) {
+        console.log("animate on scroll");
         gsap.to(lines.current, {
           ...animationProps,
           scrollTrigger: {
@@ -97,4 +98,4 @@ function AnimatedText({ children, animateOnScroll = true, delay = 0 }) {
   );
 }
 
-export default AnimatedText;
+export default Copy;

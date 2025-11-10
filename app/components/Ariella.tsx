@@ -55,11 +55,11 @@ function Ariella() {
             <div ref={containerRef} className='h-screen top-0 left-0 w-screen absolute z-20'>
                 <div ref={bottleRef} className=' absolute top-[50%] left-[50%] mt-3 transform translate-x-[-50%] translate-y-[-50%] scale-150'>
                     <Image
-                        className=' max-h-[65vh] w-auto'
+                        className=' max-h-[50vh] w-auto'
                         src="/media/bottle.png"
                         alt="Next.js logo"
-                        width={200}
-                        height={250}
+                        width={150}
+                        height={200}
                         priority
                     />
                 </div>
@@ -107,66 +107,23 @@ function Ariella() {
                         </div>
                     </div>
 
-                    {/** TERZA SEZIONE */}
-                    <div className='px-5 md:pb-0 pb-10 w-screen flex justify-center items-center flex-col'>
-                        <div className='  w-full h-full max-w-[1442px] flex justify-center items-center px-5'>
-                            <div className=' w-full grid grid-cols-12  '>
 
-                                <div className='col-span-8 col-start-1  flex justify-start items-center '>
-                                    <div className=' max-w-lg'>
-                                        <div className='w-full '>
-                                            <AnimatedText>
-                                                <h1 className=' md:text-4xl text-xl font-bold'>
-                                                    OLIO EXTRAVERGINE
-                                                    D’OLIVA 100% <span>ITALIANO</span>
-                                                </h1>
-                                            </AnimatedText>
-                                        </div>
-                                        <div className='w-full '>
-                                            <AnimatedText>
-                                                <p>
-                                                    Olio d’oliva di categoria superiore ottenuto esclusivamente mediante procedimenti cannici.
-                                                    Estratto a freddo.
-                                                </p>
-                                            </AnimatedText>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div className=' col-span-4 col-start-9 '>
-                                    <div className=' w-[30vw] h-[70vh] bg-green-600 flex justify-start flex-col items-start'>
-                                        <div ref={animatedImageContainerRef} className=' flex justify-center items-start h-full w-full '>
-                                            <div className='relative overflow-hidden w-full h-full' ref={animatedImageRef}>
-                                                <Image alt="lkadnsfjkasndjfn" src={'/media/bottle_with_olive.png'}
-                                                    fill
-                                                    priority
-                                                    className="object-cover object-top z-10"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className=' h-screen w-screen' />
 
                 </div>
 
 
-                <div className='px-5 md:pb-0 pb-10 w-screen flex justify-center items-center flex-col'>
-                    <div className='  w-full h-full max-w-[1442px] flex justify-center items-center px-5'>
+                {/** TERZA SEZIONE */}
+                <div className='px-5 md:pb-10 mb-10 w-screen h-screen flex justify-center items-center flex-col'>
+                    <div className='  w-full h-full max-w-[1442px] flex justify-center items-center'>
                         <div className=' w-full grid grid-cols-12  '>
 
-                            <div className='col-span-8 col-start-1  flex justify-start items-center '>
+                            <div className='md:col-span-8 md:col-start-1 col-span-12 flex justify-start items-center '>
                                 <div className=' max-w-lg'>
                                     <div className='w-full '>
                                         <AnimatedText>
                                             <h1 className=' md:text-4xl text-xl font-bold'>
                                                 OLIO EXTRAVERGINE
-                                                D’OLIVA 100% <span>ITALIANO</span>
+                                                D’OLIVA 100% <span className=' text-[#D6AB5D]'>ITALIANO</span>
                                             </h1>
                                         </AnimatedText>
                                     </div>
@@ -181,10 +138,11 @@ function Ariella() {
                                 </div>
                             </div>
 
-
-
-                            <div className=' col-span-4 col-start-9 '>
-                                <ImageReveal url={'/media/bottle_with_olive.png'} className=' w-[530px] h-[660px]' />
+                            {/** IMAGE */}
+                            <div className=' md:col-span-4 md:col-start-9 col-span-12'>
+                                <ImageReveal
+                                    url={'/media/olio-1012.jpg'}
+                                    className='  overflow-hidden rounded-md w-auto mt-5 md:mt-0 h-[70vh] md:w-[20vw] md:h-[70vh] max-w-[474px]' /> {/**w-[530px] h-[660px] */}
                             </div>
                         </div>
                     </div>

@@ -13,19 +13,18 @@ function ImageReveal({ url, className }: { url: string, className?:string }) {
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 70%",
-                toggleActions: "play pause pause reset",
-                markers: true
+                toggleActions: "play none none reset"
             }
         })
 
         tl.to(containerRef.current, {
             ease: "power2",
-            duration: 1.5,
+            duration: 1.2,
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
         })
         tl.to(imageRef.current, {
             scale: 1,
-            duration: 1.5
+            duration: 1.2
         }, "<")
 
 
