@@ -2,55 +2,66 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Image from 'next/image'
 import React, { useRef } from 'react'
+import { ScrollTrigger } from 'gsap/all'
 
-function ImageReveal({ url, className }: { url: string, className?:string }) {
+type Props = {
+  url: string
+  className?: string
+}
 
-    const containerRef = useRef(null)
-    const imageRef = useRef(null)
+function ImageReveal({ url, className }: Props) {
+  const containerRef = useRef<HTMLDivElement | null>(null)
+  const imageRef = useRef<HTMLImageElement | null>(null)
 
-    useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top 70%",
-                toggleActions: "play none none reset"
-            }
-        })
+  useGSAP(() => {
+    if (!containerRef.current || !imageRef.current) return
 
-        tl.to(containerRef.current, {
-            ease: "power2",
-            duration: 1.2,
-            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
-        })
-        tl.to(imageRef.current, {
-            scale: 1,
-            duration: 1.2
-        }, "<")
+    gsap.registerPlugin(ScrollTrigger)
 
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 75%',
+        toggleActions: 'play none none reset',
+      },
+    })
 
-    }, [])
+    tl.to(containerRef.current, {
+      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+      duration: 1,
+      ease: 'power2.out',
+    })
 
-    //clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    return (
-            <div
-                ref={containerRef}
-                className={`relative ${className}`}
-                style={{
-                    clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-                    transformOrigin:"top"
-                }} >
-                <Image
-                    ref={imageRef}
-                    alt="image"
-                    className="object-cover object-top z-10 scale-300"
-                    style={{
-                        scale: 1.3
-                    }}
-                    fill
-                    src={url} />
-            </div>
- 
+    tl.to(
+      imageRef.current,
+      {
+        scale: 1,
+        duration: 1.2,
+        ease: 'power3.out',
+      },
+      '<'
     )
+  }, [])
+
+  return (
+    <div
+      ref={containerRef}
+      className={`relative ${className}`}
+      style={{
+        clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
+      }}
+    >
+      <Image
+        ref={imageRef}
+        src={url}
+        alt="image"
+        fill
+        className="object-cover object-center scale-[1.15] will-change-transform"
+        sizes="(max-width: 768px) 100vw, 33vw"
+        priority={false}
+      />
+    </div>
+  )
 }
 
 export default ImageReveal

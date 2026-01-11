@@ -23,7 +23,7 @@ function Ariella() {
 
         if (!bottleRef.current) return
         const mm = gsap.matchMedia(bottleRef.current)
-        mm.add("(max-width: 640px)", (context) => {
+        mm.add("(max-width: 767px)", (context) => {
             tl.to(bottleRef.current, {
                 scale: 0.8,
                 top: '35vh',
@@ -36,7 +36,7 @@ function Ariella() {
                 }
             })
         })
-        mm.add("(min-width: 641px)", (context) => {
+        mm.add("(min-width: 768px)", (context) => {
             tl.to(bottleRef.current, {
                 scale: 0.9,
                 left: '70%',
@@ -83,23 +83,22 @@ function Ariella() {
                 <div ref={secondSectionRef} className=' px-5 md:pb-0 pb-10 w-screen h-screen flex justify-center items-center flex-col'>
 
 
-                    <div className=' w-full h-full grid grid-cols-12 max-w-[1442px]'>
+                    <div className=' md:w-[80vw] h-full grid grid-cols-12 max-w-[1442px]'>
                         <div className='  flex flex-col justify-end md:justify-center col-span-12 md:col-span-6 '>
                             <div className=' overflow-y-hidden'>
                                 <AnimatedText>
-                                    <h1 className=' md:text-4xl text-xl font-bold '>Un solo prodotto </h1>
+                                    <h1 className=' md:text-3xl text-xl font-bold '>
+                                        Ariella – Il nome, l’origine, l’emozione
+                                    </h1>
                                 </AnimatedText>
                             </div>
-                            <div className=' overflow-y-hidden'>
-                                <AnimatedText>
 
-                                    <h1 className=' md:text-4xl text-xl font-bold '>la nostra essenza.</h1>
-                                </AnimatedText>
-                            </div>
                             <div className=' overflow-y-hidden'>
                                 <AnimatedText>
                                     <p className=' text-base md:text-lg mt-5'>
-                                        Ogni goccia del nostro olio extravergine d’oliva racchiude il lavoro di un anno intero, dalle nostre olive selezionate alla spremitura a freddo nel frantoio di famiglia.Dal colore verde intenso al profumo fruttato, fino al gusto equilibrato tra dolce e amaro, è un olio pensato per chi cerca autenticità e purezza.
+                                        Il nome Ariella racchiude la nostra storia di famiglia e, allo stesso tempo, la sensazione che desideriamo regalare a chi assaggia il nostro olio: leggerezza, armonia, autenticità. Un nome che richiama l’aria, il vento e il respiro profondo delle colline irpine.
+                                        Ariella nasce a Grottaminarda, nel cuore dell’Irpinia, tra colline verdi e oliveti esposti a costante ventilazione, a un’altitudine che favorisce forti escursioni termiche tra giorno e notte. Questo microclima unico, unito a terreni argilloso-calcarei, contribuisce allo sviluppo di profili aromatici intensi e ben definiti, preservando freschezza e complessità nel frutto.
+
                                     </p>
                                 </AnimatedText>
 
@@ -114,7 +113,7 @@ function Ariella() {
 
                 {/** TERZA SEZIONE */}
                 <div className='px-5 md:pb-10 mb-10 w-screen h-screen flex justify-center items-center flex-col'>
-                    <div className='  w-full h-full max-w-[1442px] flex justify-center items-center'>
+                    <div className='  md:w-[80vw] h-full max-w-[1442px] flex justify-center items-center'>
                         <div className=' w-full grid grid-cols-12  '>
 
                             <div className='md:col-span-8 md:col-start-1 col-span-12 flex justify-start items-center '>
@@ -130,8 +129,10 @@ function Ariella() {
                                     <div className='w-full '>
                                         <AnimatedText>
                                             <p>
-                                                Olio d’oliva di categoria superiore ottenuto esclusivamente mediante procedimenti cannici.
-                                                Estratto a freddo.
+                                                È un blend equilibrato ottenuto dall’unione di tre cultivar: Olivastra e Ogliarola Avellinese, varietà autoctone che esprimono l’anima più autentica del territorio irpino, e Leccino, cultivar non autoctona selezionata per conferire rotondità, armonia ed eleganza al profilo sensoriale dell’olio.
+                                                Dall’unione di queste tre varietà nasce un olio extra vergine di oliva medio fruttato, armonico ed elegante, caratterizzato da sentori di pomodoro acerbo, erba verde e mandorla fresca, con un amaro e un piccante equilibrati e persistenti, tipici degli oli di alta qualità.
+                                                Ariella è l’incontro tra natura, vento e sapere familiare, racchiuso in una bottiglia.
+
                                             </p>
                                         </AnimatedText>
                                     </div>
@@ -139,10 +140,11 @@ function Ariella() {
                             </div>
 
                             {/** IMAGE */}
-                            <div className=' md:col-span-4 md:col-start-9 col-span-12'>
+                            <div className="col-span-12 md:col-span-4 md:col-start-9 flex justify-center md:justify-end">
                                 <ImageReveal
-                                    url={'/media/olio-1012.jpg'}
-                                    className='  overflow-hidden rounded-md w-auto mt-5 md:mt-0 h-[70vh] md:w-[20vw] md:h-[70vh] max-w-[474px]' /> {/**w-[530px] h-[660px] */}
+                                    url="/media/olio-1012.jpg"
+                                    className="relative overflow-hidden rounded-md w-full max-w-none md:max-w-[474px] aspect-[4/5] sm:aspect-[3/4] mt-8 md:mt-0"
+                                />
                             </div>
                         </div>
                     </div>

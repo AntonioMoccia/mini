@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import NavBar from "./components/NavBar";
 import History from "./components/History";
 import { MediaQueryProvider } from "./context/responsive";
+import Irpinia from "./components/Irpinia";
 
 
 export default function Home() {
@@ -30,9 +31,10 @@ export default function Home() {
         <NavBar />
         <div id="smooth-wrapper">
           <div id="smooth-content">
-            <main className=" min-h-screen w-screen bg-black ">
+            <main className="items-center min-h-screen w-screen bg-black ">
               <Ariella />
-              <History />
+              <Irpinia />
+
             </main>
           </div>
         </div>
