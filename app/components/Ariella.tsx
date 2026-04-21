@@ -23,19 +23,22 @@ function Ariella() {
 
         if (!bottleRef.current) return
         const mm = gsap.matchMedia(bottleRef.current)
+
+        //mobile
         mm.add("(max-width: 767px)", (context) => {
             tl.to(bottleRef.current, {
-                scale: 0.8,
-                top: '35vh',
+                scale: 0.6,
+                top: '30vh',
                 rotate: '10deg',
                 scrollTrigger: {
                     trigger: containerRef.current,
-
                     pin: true,
                     scrub: true,
                 }
             })
         })
+
+        //desktop
         mm.add("(min-width: 768px)", (context) => {
             tl.to(bottleRef.current, {
                 scale: 0.9,
@@ -52,7 +55,7 @@ function Ariella() {
 
     return (
         <>
-            <div ref={containerRef} className='h-screen top-0 left-0 w-screen absolute z-20'>
+            <div ref={containerRef} id="ariella-container" className='h-screen top-0 left-0 w-screen absolute z-20'>
                 <div ref={bottleRef} className=' absolute top-[50%] left-[50%] mt-3 transform translate-x-[-50%] translate-y-[-50%] scale-150'>
                     <Image
                         className=' max-h-[50vh] w-auto'
@@ -80,10 +83,10 @@ function Ariella() {
                     />
                 </div>
                 {/* Second section */}
-                <div ref={secondSectionRef} className=' px-5 md:pb-0 pb-10 w-screen h-screen flex justify-center items-center flex-col'>
+                <div ref={secondSectionRef} className=' p px-5 md:pb-0 pb-10 w-screen min-h-screen flex justify-center items-center flex-col'>
 
 
-                    <div className=' md:w-[80vw] h-full grid grid-cols-12 max-w-[1442px]'>
+                    <div className=' md:w-[80vw] md:mt-0 mt-[60vh] h-full grid grid-cols-12 max-w-[1442px]'>
                         <div className='  flex flex-col justify-end md:justify-center col-span-12 md:col-span-6 '>
                             <div className=' overflow-y-hidden'>
                                 <AnimatedText>
@@ -112,11 +115,17 @@ function Ariella() {
 
 
                 {/** TERZA SEZIONE */}
-                <div className='px-5 md:pb-10 mb-10 w-screen h-screen flex justify-center items-center flex-col'>
+                <div className='px-5 relative md:pb-10 my-15 w-screen min-h-screen flex justify-center items-center flex-col'>
                     <div className='  md:w-[80vw] h-full max-w-[1442px] flex justify-center items-center'>
                         <div className=' w-full grid grid-cols-12  '>
-
-                            <div className='md:col-span-8 md:col-start-1 col-span-12 flex justify-start items-center '>
+                            {/** IMAGE */}
+                            <div className="col-span-12 md:col-span-4 md:col-start-1 flex justify-center md:justify-end">
+                                <ImageReveal
+                                    url="/media/olio-1012.jpg"
+                                    className="relative overflow-hidden rounded-md w-full max-w-none md:max-w-[474px] aspect-[4/5] sm:aspect-[3/4] mt-8 md:mt-0"
+                                />
+                            </div>
+                            <div className='mt-10 md:mt-0 md:col-span-8 md:col-start-8 col-span-12 flex  justify-start items-center '>
                                 <div className=' max-w-lg'>
                                     <div className='w-full '>
                                         <AnimatedText>
@@ -139,13 +148,7 @@ function Ariella() {
                                 </div>
                             </div>
 
-                            {/** IMAGE */}
-                            <div className="col-span-12 md:col-span-4 md:col-start-9 flex justify-center md:justify-end">
-                                <ImageReveal
-                                    url="/media/olio-1012.jpg"
-                                    className="relative overflow-hidden rounded-md w-full max-w-none md:max-w-[474px] aspect-[4/5] sm:aspect-[3/4] mt-8 md:mt-0"
-                                />
-                            </div>
+
                         </div>
                     </div>
                 </div>
