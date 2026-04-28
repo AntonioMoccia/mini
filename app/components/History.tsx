@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import ImageReveal from './ImageReveal'
 import AnimatedText from '@/app/components/AnimatedText'
