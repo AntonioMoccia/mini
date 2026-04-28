@@ -9,6 +9,8 @@ import NavBar from "./components/NavBar";
 import History from "./components/History";
 import { MediaQueryProvider } from "./context/responsive";
 import Irpinia from "./components/Irpinia";
+import Contattaci from "./components/Contattaci";
+import Footer from "./components/Footer";
 
 
 export default function Home() {
@@ -18,9 +20,9 @@ export default function Home() {
     gsap.registerPlugin(ScrollSmoother)
     // create the scrollSmoother before your scrollTriggers
     ScrollSmoother.create({
-      smooth: 2, // how long (in seconds) it takes to "catch up" to the native scroll position
-      effects: true, // looks for data-speed and data-lag attributes on elements
-      smoothTouch: 1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+      smooth: 0.8,
+      effects: true,
+      smoothTouch: 0.3,
     });
   }, [])
 
@@ -33,9 +35,11 @@ export default function Home() {
           <div id="smooth-content">
             <main className="items-center min-h-screen w-screen bg-black ">
               <Ariella />
+              <History />
               <Irpinia />
-
+              <Contattaci />
             </main>
+            <Footer />
           </div>
         </div>
       </div>

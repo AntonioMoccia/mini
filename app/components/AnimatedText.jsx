@@ -1,11 +1,11 @@
 "use client";
 import React, { useRef } from "react";
 
-import { ScrollTrigger, SplitText } from "gsap/all";
+import { ScrollTrigger, ScrollSmoother, SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 function Copy({ children, animateOnScroll = true, delay = 0 }) {
   const containerRef = useRef(null);
   const elementRef = useRef([]);
@@ -62,14 +62,17 @@ function Copy({ children, animateOnScroll = true, delay = 0 }) {
 
       if (animateOnScroll) {
         console.log("animate on scroll");
-        gsap.to(lines.current, {
-          ...animationProps,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: window.innerWidth <= 640 ? "top 90%" : "top 75%",
-            /* markers: true, */
-          },
-        });
+        gsap.fromTo(lines.current,
+          { y: '100%' },
+          {
+            ...animationProps,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: window.innerWidth <= 640 ? "top 90%" : "top 75%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
       } else {
         gsap.to(lines.current, animationProps);
       }

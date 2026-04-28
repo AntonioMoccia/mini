@@ -19,9 +19,13 @@ function Ariella() {
 
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger, SplitText)
-        const tl = gsap.timeline()
 
         if (!bottleRef.current) return
+
+        gsap.set(bottleRef.current, { clearProps: 'all' })
+        ScrollTrigger.refresh()
+
+        const tl = gsap.timeline()
         const mm = gsap.matchMedia(bottleRef.current)
 
         //mobile

@@ -17,7 +17,7 @@ function FullScreenVideo() {
             videoRef.current,
             {
                 scale: 0.8,
-                borderRadius: isMobile ? '0px' : '50px',
+                borderRadius: isMobile ? '50px' : '50px',
                 scrollTrigger: {
                     trigger: videoRef.current,
                     start: "top bottom",       // inizia quando il wrapper entra nella viewport
@@ -30,10 +30,10 @@ function FullScreenVideo() {
     }, [])
 
     return (
-        <div className=' w-screen py-20 '>
+        <div id="irpinia" className=' w-screen py-20 mt-32 '>
             <div
                 ref={videoRef}
-                className="w-screen rounded-0 h-screen overflow-hidden"
+                className="w-screen rounded-sm h-screen overflow-hidden"
                 style={{ transformOrigin: "center center" }}
             >
                 <video
@@ -63,13 +63,7 @@ function FullScreenVideo() {
                     </AnimatedText>
                 </div>
             </div>
-            <Link href="/storia" className=' pointer-events-auto'>
-                <div className=' w-screen flex items-center justify-center '>
-                    <div className=' border w-30 h-30 flex items-center justify-center rounded-full text-sm font-medium text-white bg-black pointer-events-auto cursor-pointer  transition'>
-                        La nostra storia
-                    </div>
-                </div>
-            </Link>
+          
 
         </div>
     )

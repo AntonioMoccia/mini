@@ -7,8 +7,8 @@ import AnimatedText from '@/app/components/AnimatedText'
 function History() {
     return (
 
-        <div className='px-5 md:pb-10 mb-10 w-screen h-screen flex bg-[#D6AB5D] justify-center items-center flex-col'>
-            <div className='  w-full h-full max-w-[1442px] flex justify-center items-center'>
+        <div id="storia" className='px-5 py-20 md:py-24 mb-10 w-screen flex bg-[#D6AB5D] justify-center items-center flex-col'>
+            <div className=' md:w-[80vw] h-full max-w-[1442px] flex justify-center items-center'>
                 <div className=' w-full grid grid-cols-12  '>
 
                     <div className='md:col-span-8 md:col-start-1 col-span-12 flex justify-start items-center '>
@@ -23,7 +23,12 @@ function History() {
                             <div className='w-full '>
                                 <AnimatedText>
                                     <p>
-                                        
+                                        Tutto nasce da una famiglia e da un pezzo di terra che profuma di ulivi e vento.
+                                        Tre generazioni di mani che hanno imparato a leggere il frutto prima ancora di raccoglierlo,
+                                        a rispettare i ritmi della natura senza mai forzarli. A Grottaminarda, tra le colline dell&apos;Irpinia,
+                                        abbiamo sempre saputo che un buon olio non si costruisce — si ascolta.
+                                        Ariella è il frutto di quella pazienza, di quella cura silenziosa che si tramanda
+                                        senza bisogno di parole, solo attraverso il gesto preciso e antico della raccolta a mano.
                                     </p>
                                 </AnimatedText>
                             </div>
