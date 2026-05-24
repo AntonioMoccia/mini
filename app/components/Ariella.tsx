@@ -22,45 +22,50 @@ function Ariella() {
 
         if (!bottleRef.current) return
 
-        gsap.set(bottleRef.current, { clearProps: 'all' })
-        ScrollTrigger.refresh()
+        gsap.set(bottleRef.current, {
+            top: '50%',
+            left: '50%',
+            xPercent: -50,
+            yPercent: -50,
+            scale: 1.5,
+            rotate: 0,
+        })
 
-        const tl = gsap.timeline()
-        const mm = gsap.matchMedia(bottleRef.current)
+        const mm = gsap.matchMedia()
 
-        //mobile
-        mm.add("(max-width: 767px)", (context) => {
-            tl.to(bottleRef.current, {
+        mm.add("(max-width: 767px)", () => {
+            gsap.to(bottleRef.current, {
                 scale: 0.6,
                 top: '30vh',
-                rotate: '10deg',
+                rotate: 10,
                 scrollTrigger: {
                     trigger: containerRef.current,
                     pin: true,
                     scrub: true,
-                }
+                },
             })
         })
 
-        //desktop
-        mm.add("(min-width: 768px)", (context) => {
-            tl.to(bottleRef.current, {
+        mm.add("(min-width: 768px)", () => {
+            gsap.to(bottleRef.current, {
                 scale: 0.9,
                 left: '70%',
-                rotate: '10deg',
+                rotate: 10,
                 scrollTrigger: {
                     trigger: containerRef.current,
                     pin: true,
                     scrub: true,
-                }
+                },
             })
         })
+
+        ScrollTrigger.refresh()
     }, [])
 
     return (
         <>
             <div ref={containerRef} id="ariella-container" className='h-screen top-0 left-0 w-screen absolute z-20'>
-                <div ref={bottleRef} className=' absolute top-[50%] left-[50%] mt-3 transform translate-x-[-50%] translate-y-[-50%] scale-150'>
+                <div ref={bottleRef} className='absolute'>
                     <Image
                         className=' max-h-[50vh] w-auto'
                         src="/media/bottle.png"
@@ -68,6 +73,7 @@ function Ariella() {
                         width={150}
                         height={200}
                         priority
+                        onLoadingComplete={() => ScrollTrigger.refresh()}
                     />
                 </div>
 
