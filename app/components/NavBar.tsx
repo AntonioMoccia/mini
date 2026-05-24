@@ -46,8 +46,9 @@ function NavBar() {
     const pathname = usePathname();
     const NavItems = [
         { label: "Home", href: "/", section: 'home' },
-        { label: "La nostra storia", href: "#storia", section: 'storia' },
-        { label: "Contattaci", href: "#contattaci", section: 'contattaci' },
+        { label: "La nostra storia", href: "/#storia", section: 'storia' },
+        { label: "Shop", href: "/shop", section: 'shop' },
+        { label: "Contattaci", href: "/#contattaci", section: 'contattaci' },
     ];
     const navItemRef = React.useRef<HTMLDivElement[] | null>([]);
     const navContentRef = React.useRef(null);
@@ -56,11 +57,18 @@ function NavBar() {
     const handleCloseMenu = () => setIsMenuOpen(false);
 
     const handleNavClick = (e: React.MouseEvent, href: string) => {
-        if (!href.startsWith('#')) return;
-        e.preventDefault();
-        const smoother = ScrollSmoother.get();
-        if (smoother) {
-            smoother.scrollTo(href, true);
+        const hashIndex = href.indexOf('#');
+        if (hashIndex === -1) {
+            handleCloseMenu();
+            return;
+        }
+        const hash = href.slice(hashIndex);
+        if (pathname === '/') {
+            e.preventDefault();
+            const smoother = ScrollSmoother.get();
+            if (smoother) {
+                smoother.scrollTo(hash, true);
+            }
         }
         handleCloseMenu();
     };
@@ -112,7 +120,7 @@ function NavBar() {
 
     return (
         <header className="h-20 w-screen fixed top-0 left-0 z-50 isolate transition-colors duration-500"
-            style={{ backgroundColor: activeSection === 'storia' ? '#000000' : 'transparent' }}
+            style={{ backgroundColor: activeSection === 'storia' || activeSection === 'irpinia' ? '#000000' : 'transparent' }}
         >
             <nav className="w-full h-full px-8 md:px-12">
                 <div className="flex justify-between h-full items-center">

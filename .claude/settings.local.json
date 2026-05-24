@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm i:*)",
+      "Bash(npm run:*)",
+      "Bash(nvm use:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm show:*)",
+      "Bash(python3 -c \"import json,sys; vs=json.load\\(sys.stdin\\); print\\('\\\\n'.join\\([v for v in vs if not any\\(x in v for x in ['alpha','beta','rc','canary']\\)][-10:]\\)\\)\")",
+      "Bash(npm install:*)"
+    ]
+  }
+}

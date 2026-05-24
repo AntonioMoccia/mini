@@ -19,11 +19,18 @@ export default function Home() {
   useGSAP(() => {
     gsap.registerPlugin(ScrollSmoother)
     // create the scrollSmoother before your scrollTriggers
-    ScrollSmoother.create({
+    const smoother = ScrollSmoother.create({
       smooth: 0.8,
       effects: true,
       smoothTouch: 0.3,
     });
+
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const hash = window.location.hash;
+      requestAnimationFrame(() => {
+        smoother.scrollTo(hash, false);
+      });
+    }
   }, [])
 
 

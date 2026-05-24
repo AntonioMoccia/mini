@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Link from 'next/link'
 import ImageReveal from './ImageReveal'
 import AnimatedText from '@/app/components/AnimatedText'
 
@@ -25,13 +26,18 @@ function History() {
                                 <AnimatedText>
                                     <p>
                                         Tutto nasce da una famiglia e da un pezzo di terra che profuma di ulivi e vento.
-                                        Tre generazioni di mani che hanno imparato a leggere il frutto prima ancora di raccoglierlo,
-                                        a rispettare i ritmi della natura senza mai forzarli. A Grottaminarda, tra le colline dell&apos;Irpinia,
-                                        abbiamo sempre saputo che un buon olio non si costruisce — si ascolta.
-                                        Ariella è il frutto di quella pazienza, di quella cura silenziosa che si tramanda
-                                        senza bisogno di parole, solo attraverso il gesto preciso e antico della raccolta a mano.
+                                        A Grottaminarda, tra le colline dell&apos;Irpinia, tre generazioni di mani hanno
+                                        imparato che un buon olio non si costruisce — si ascolta.
                                     </p>
                                 </AnimatedText>
+                            </div>
+                            <div className='w-full mt-6'>
+                                <Link
+                                    href="/storia"
+                                    className='inline-block border border-black text-black px-6 py-3 text-sm font-medium uppercase tracking-wide hover:bg-black hover:text-[#D6AB5D] transition-colors'
+                                >
+                                    Scopri la nostra storia
+                                </Link>
                             </div>
                         </div>
                     </div>
