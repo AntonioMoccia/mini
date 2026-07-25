@@ -10,10 +10,9 @@ import Image from 'next/image';
 import Gallery, { GalleryImage } from '../components/Gallery';
 
 const galleryNuovoFrantoio: GalleryImage[] = [
-    { src: '/media/GBI01622.jpg', alt: 'Nuovo frantoio 1' },
-    { src: '/media/GBI01691.jpg', alt: 'Nuovo frantoio 2' },
-    { src: '/media/olio-1012.jpg', alt: 'Nuovo frantoio 3' },
-    { src: '/media/hero-bg.png', alt: 'Nuovo frantoio 4' },
+    { src: '/media/new/GBI05337.jpg', alt: 'Nuovo frantoio 1' },
+    { src: '/media/new/GBI05400.jpg', alt: 'Nuovo frantoio 2' },
+    { src: '/media/new/GBI05410.jpg', alt: 'Nuovo frantoio 3' },
 ];
 
 export default function Storia() {
@@ -55,7 +54,7 @@ export default function Storia() {
                                 <div className="col-span-12 md:col-span-6">
                                     <div className="relative w-full aspect-4/5 overflow-hidden rounded-sm">
                                         <Image
-                                            src="/media/history_image.jpg"
+                                            src="/media/old/GBI05355.jpg"
                                             alt="Il vecchio frantoio di famiglia"
                                             fill
                                             sizes="(max-width: 768px) 100vw, 50vw"
@@ -69,15 +68,11 @@ export default function Storia() {
                                         Dove tutto è cominciato.
                                     </h3>
                                     <p className="text-white/70 font-light leading-relaxed mb-4">
-                                        Il vecchio frantoio è il cuore antico della nostra famiglia. Tra mura
-                                        di pietra e macine in granito, generazioni di Minichiello hanno premuto
-                                        le olive raccolte a mano sulle colline di Grottaminarda, custodendo
-                                        un sapere tramandato senza fretta, di padre in figlio.
+                                        La nostra storia nasce negli anni ’70, nel cuore dell’Irpinia.
+                                        Due fratelli, Nunziante e Onofrio, profondamente legati alla loro terra, scelgono di valorizzarne uno dei tesori più autentici: l’olivo. Acquistano nuovi oliveti e puntano su cultivar autoctone, con un obiettivo chiaro: trasformare la tradizione irpina in un olio di eccellenza.
                                     </p>
                                     <p className="text-white/70 font-light leading-relaxed">
-                                        Ogni gesto era misurato, ogni stagione un rito. Qui è nata l&apos;idea
-                                        di un olio che non fosse soltanto un prodotto, ma il racconto di una
-                                        terra e delle persone che la abitano.
+                                        Nel 1976 aprono uno dei primi frantoi della zona, mettendo passione e competenza al servizio della comunità. Da quel momento, la crescita è continua: nuovi impianti, tecnologie sempre più evolute e una conoscenza che si affina anno dopo anno.
                                     </p>
                                 </div>
                             </div>
@@ -95,16 +90,10 @@ export default function Storia() {
                                     Tradizione che incontra l&apos;innovazione.
                                 </h3>
                                 <p className="text-white/70 font-light leading-relaxed mb-4">
-                                    Il nuovo frantoio nasce dall&apos;esigenza di proteggere ciò che la natura
-                                    ci offre, senza tradire il gesto antico. Tecnologie a ciclo continuo e a
-                                    bassa temperatura ci permettono di estrarre l&apos;olio entro poche ore
-                                    dalla raccolta, preservando aromi, polifenoli e la freschezza del frutto.
+                                    Nel 2019, tradizione e innovazione si incontrano con l’installazione dell’impianto di molitura a freddo per centrifugazione, per garantire un olio ancora più puro, profumato e di alta qualità.
                                 </p>
                                 <p className="text-white/70 font-light leading-relaxed">
-                                    Acciaio, controllo della temperatura e attenzione maniacale ad ogni
-                                    passaggio: la stessa cura che metteva nostro nonno, raccontata oggi con
-                                    il linguaggio della precisione. Perché il rispetto per la materia prima
-                                    non conosce epoca.
+                                    Nel 2025 abbiamo fatto un passo in più: racchiudere l’essenza dell’Irpinia in una bottiglia, portando sulla vostra tavola un olio che racconta territorio, famiglia e passione.
                                 </p>
                             </div>
 

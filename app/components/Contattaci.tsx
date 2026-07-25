@@ -8,6 +8,8 @@ import { ScrollTrigger } from 'gsap/all';
 export default function Contattaci() {
     const [form, setForm] = useState({ nome: '', email: '', messaggio: '' });
     const [sent, setSent] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
     const headingRef = useRef(null);
     const formRef = useRef(null);
@@ -37,9 +39,29 @@ export default function Contattaci() {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setSent(true);
+        setLoading(true);
+        setError('');
+
+        try {
+            const res = await fetch('/api/contatti', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(form),
+            });
+
+            if (!res.ok) {
+                const data = await res.json().catch(() => ({}));
+                throw new Error(data.error ?? 'Invio non riuscito.');
+            }
+
+            setSent(true);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Invio non riuscito.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -72,12 +94,19 @@ export default function Contattaci() {
                             <Field label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
                             <TextareaField label="Messaggio" name="messaggio" value={form.messaggio} onChange={handleChange} required />
 
+                            {error && (
+                                <p className="text-red-400 text-xs tracking-widest uppercase font-light">
+                                    {error}
+                                </p>
+                            )}
+
                             <div className="pt-4">
                                 <button
                                     type="submit"
-                                    className="group text-xs tracking-widest uppercase font-light text-white cursor-pointer flex flex-col items-start gap-1"
+                                    disabled={loading}
+                                    className="group text-xs tracking-widest uppercase font-light text-white cursor-pointer flex flex-col items-start gap-1 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    <span>Invia messaggio</span>
+                                    <span>{loading ? 'Invio in corso…' : 'Invia messaggio'}</span>
                                     <span className="block h-[1px] w-full bg-[#D6AB5D] transition-transform duration-300 origin-left group-hover:scale-x-110" />
                                 </button>
                             </div>

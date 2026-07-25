@@ -25,9 +25,7 @@ function History() {
                             <div className='w-full '>
                                 <AnimatedText>
                                     <p>
-                                        Tutto nasce da una famiglia e da un pezzo di terra che profuma di ulivi e vento.
-                                        A Grottaminarda, tra le colline dell&apos;Irpinia, tre generazioni di mani hanno
-                                        imparato che un buon olio non si costruisce — si ascolta.
+                                       Da oltre 50 anni e tre generazioni, la nostra famiglia vive tra gli oliveti e l’olio, custodendo un sapere che si tramanda nel tempo.
                                     </p>
                                 </AnimatedText>
                             </div>

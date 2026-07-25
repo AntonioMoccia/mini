@@ -43,7 +43,7 @@ export default function Gallery({ images }: GalleryProps) {
 
     return (
         <>
-            {/* Grid */}
+            {/* Grid masonry — immagini intere, senza ritaglio */}
             <div className="columns-2 md:columns-3 gap-3 space-y-3">
                 {images.map((img, i) => (
                     <div
@@ -51,15 +51,14 @@ export default function Gallery({ images }: GalleryProps) {
                         onClick={() => openLightbox(i)}
                         className="break-inside-avoid relative overflow-hidden cursor-pointer group rounded-sm"
                     >
-                        <div className="relative w-full">
-                            <Image
-                                src={img.src}
-                                alt={img.alt}
-                                width={800}
-                                height={600}
-                                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
-                        </div>
+                        <Image
+                            src={img.src}
+                            alt={img.alt}
+                            width={800}
+                            height={600}
+                            sizes="(max-width: 768px) 50vw, 33vw"
+                            className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                        />
                         {/* hover overlay */}
                         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
