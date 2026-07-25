@@ -3,10 +3,10 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Indirizzo verificato su Resend (es. "Ariella <contatti@tuodominio.it>")
-const FROM = process.env.CONTACT_FROM_EMAIL ?? 'onboarding@resend.dev';
+// Indirizzo verificato su Resend (dominio oleificiominichiello.it)
+const FROM = process.env.CONTACT_FROM_EMAIL ?? 'Ariella <contatti@oleificiominichiello.it>';
 // Dove vuoi ricevere i messaggi
-const TO = process.env.CONTACT_TO_EMAIL ?? 'moccia.ant@gmail.com';
+const TO = process.env.CONTACT_TO_EMAIL ?? 'info@oleificiominichiello.it';
 
 export async function POST(request: Request) {
     try {
