@@ -12,6 +12,7 @@ const socialLinks = [
     {
         name: 'Instagram',
         href: '#',
+        hidden: true,
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -22,7 +23,7 @@ const socialLinks = [
     },
     {
         name: 'Facebook',
-        href: '#',
+        href: 'https://www.facebook.com/share/191GXzLYB8/?mibextid=wwXIfr',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
@@ -120,7 +121,7 @@ function NavBar() {
 
     return (
         <header className="h-20 w-screen fixed top-0 left-0 z-50 isolate transition-colors duration-500"
-            style={{ backgroundColor: activeSection === 'storia' || activeSection === 'irpinia' ? '#000000' : 'transparent' }}
+            style={{ backgroundColor: activeSection === 'storia' ? '#000000' : 'transparent' }}
         >
             <nav className="w-full h-full px-8 md:px-12">
                 <div className="flex justify-between h-full items-center">
@@ -164,10 +165,12 @@ function NavBar() {
 
                         {/* Social icons desktop */}
                         <div className="flex items-center gap-4 border-l border-white/10 pl-10">
-                            {socialLinks.map(({ name, href, icon }) => (
+                            {socialLinks.filter(link => !link.hidden).map(({ name, href, icon }) => (
                                 <a
                                     key={name}
                                     href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label={name}
                                     className="text-white hover:text-[#D6AB5D] transition-colors duration-300"
                                 >
@@ -219,10 +222,12 @@ function NavBar() {
 
                         {/* Social icons mobile — bottom */}
                         <div className="flex items-center gap-6">
-                            {socialLinks.map(({ name, href, icon }) => (
+                            {socialLinks.filter(link => !link.hidden).map(({ name, href, icon }) => (
                                 <a
                                     key={name}
                                     href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label={name}
                                     className="text-[#9e9e9e] hover:text-[#D6AB5D] transition-colors duration-300"
                                 >

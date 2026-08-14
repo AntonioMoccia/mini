@@ -5,11 +5,8 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import AnimatedText from './AnimatedText'
 import { ArrowRight } from 'lucide-react'
-import { useResponsive } from '../hooks/use-responsive'
-import Link from 'next/link'
 function FullScreenVideo() {
     const videoRef = useRef<HTMLDivElement | null>(null)
-    const { isMobile } = useResponsive()
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger)
         if (!videoRef.current) return
@@ -17,12 +14,12 @@ function FullScreenVideo() {
         gsap.from(
             videoRef.current,
             {
-                scale: 0.8,
-                borderRadius: isMobile ? '50px' : '50px',
+                scale: 0.75,
+                yPercent: 30,
                 scrollTrigger: {
                     trigger: videoRef.current,
-                    start: "top bottom",       // inizia quando il wrapper entra nella viewport
-                    end: "+=100%",       // termina quando il wrapper esce dalla viewport
+                    start: "top bottom",
+                    end: "+=100%",
                     scrub: true,
                     pin: "#ariella-container",
                 },
@@ -34,11 +31,11 @@ function FullScreenVideo() {
         <div id="irpinia" className=' w-screen py-20 mt-32 '>
             <div
                 ref={videoRef}
-                className="w-screen rounded-sm h-screen overflow-hidden"
+                className="w-screen rounded-sm h-[60vh] md:h-screen overflow-hidden"
                 style={{ transformOrigin: "center center" }}
             >
                 <video
-                    className="w-screen h-screen object-cover"
+                    className="w-screen h-[60vh] md:h-screen object-cover"
                     autoPlay
                     muted
                     loop
@@ -50,9 +47,9 @@ function FullScreenVideo() {
             {/*PAGE CONTENT*/}
 
             <div className="px-5 my-10 w-screen flex items-center relative justify-center top-0 left-0 pointer-events-none">
-                <div className='max-w-[1442px] py-5 md:w-[50vw] '>
+                <div className='max-w-[1442px] py-5 md:w-[50vw] text-white'>
                     <AnimatedText >
-                        <h1 className="text-white text-3xl font-bold">IRPINIA</h1>
+                        <h1 className="text-white text-3xl font-bold mb-6">IRPINIA</h1>
                     </AnimatedText>
                     <AnimatedText >
                         <p>
