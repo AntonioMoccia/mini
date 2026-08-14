@@ -18,7 +18,7 @@ export default function Home() {
         <div id="smooth-wrapper">
           <div id="smooth-content">
             <SmootherInit />
-            <main className="items-center min-h-screen text-red-500 w-screen bg-black ">
+            <main className="items-center min-h-screen  w-screen bg-black ">
               <Ariella />
               <History />
               <Irpinia />
