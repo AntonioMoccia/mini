@@ -14,7 +14,7 @@ function History() {
                 <div className=' w-full grid grid-cols-12  '>
 
                     <div className='md:col-span-8 md:col-start-1 col-span-12 flex justify-start items-center '>
-                        <div className=' max-w-lg'>
+                        <div className=' max-w-lg text-white'>
                             <div className='w-full '>
                                 <AnimatedText>
                                     <h1 className=' md:text-4xl text-xl font-bold'>

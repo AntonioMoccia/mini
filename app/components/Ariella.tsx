@@ -97,7 +97,7 @@ function Ariella() {
 
 
                     <div className=' md:w-[80vw] md:mt-0 mt-[60vh] h-full grid grid-cols-12 max-w-[1442px]'>
-                        <div className='  flex flex-col justify-end md:justify-center col-span-12 md:col-span-6 '>
+                        <div className='  flex flex-col justify-end md:justify-center col-span-12 md:col-span-6 text-white'>
                             <div className=' overflow-y-hidden'>
                                 <AnimatedText>
                                     <h1 className=' md:text-3xl text-xl font-bold '>
@@ -108,10 +108,11 @@ function Ariella() {
 
                             <div className=' overflow-y-hidden'>
                                 <AnimatedText>
-                                    <p className=' text-base md:text-lg mt-5'>
+                                    <p className=' text-base md:text-lg mt-5 mb-4'>
                                         Il nome Ariella racchiude la nostra storia di famiglia e, allo stesso tempo, la sensazione che desideriamo regalare a chi assaggia il nostro olio: leggerezza, armonia, autenticità. Un nome che richiama l’aria, il vento e il respiro profondo delle colline irpine.
+                                    </p>
+                                    <p className=' text-base md:text-lg'>
                                         Ariella nasce a Grottaminarda, nel cuore dell’Irpinia, tra colline verdi e oliveti esposti a costante ventilazione, a un’altitudine che favorisce forti escursioni termiche tra giorno e notte. Questo microclima unico, unito a terreni argilloso-calcarei, contribuisce allo sviluppo di profili aromatici intensi e ben definiti, preservando freschezza e complessità nel frutto.
-
                                     </p>
                                 </AnimatedText>
 
@@ -136,7 +137,7 @@ function Ariella() {
                                 />
                             </div>
                             <div className='mt-10 md:mt-0 md:col-span-8 md:col-start-8 col-span-12 flex  justify-start items-center '>
-                                <div className=' max-w-lg'>
+                                <div className=' max-w-lg text-white'>
                                     <div className='w-full '>
                                         <AnimatedText>
                                             <h1 className=' md:text-4xl text-xl font-bold'>
@@ -145,13 +146,16 @@ function Ariella() {
                                             </h1>
                                         </AnimatedText>
                                     </div>
-                                    <div className='w-full '>
+                                    <div className='w-full mt-6'>
                                         <AnimatedText>
-                                            <p>
-                                                È un blend equilibrato ottenuto dall’unione di tre cultivar: Olivastra e Ogliarola Avellinese, varietà autoctone che esprimono l’anima più autentica del territorio irpino, e Leccino, cultivar non autoctona selezionata per conferire rotondità, armonia ed eleganza al profilo sensoriale dell’olio.
+                                            <p className='mb-4'>
+                                                È un blend equilibrato ottenuto dall’unione di tre cultivar: Olivella di Grottaminarda e Ogliarola, varietà autoctone che esprimono l’anima più autentica del territorio irpino, e Leccino, cultivar non autoctona selezionata per conferire rotondità, armonia ed eleganza al profilo sensoriale dell’olio.
+                                            </p>
+                                            <p className='mb-4'>
                                                 Dall’unione di queste tre varietà nasce un olio extra vergine di oliva medio fruttato, armonico ed elegante, caratterizzato da sentori di pomodoro acerbo, erba verde e mandorla fresca, con un amaro e un piccante equilibrati e persistenti, tipici degli oli di alta qualità.
+                                            </p>
+                                            <p>
                                                 Ariella è l’incontro tra natura, vento e sapere familiare, racchiuso in una bottiglia.
-
                                             </p>
                                         </AnimatedText>
                                     </div>

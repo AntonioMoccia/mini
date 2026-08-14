@@ -47,7 +47,7 @@ export default function Footer() {
 
                 {/* Copyright */}
                 <p className="text-[#9e9e9e] text-xs tracking-widest uppercase font-light text-center">
-                    © {new Date().getFullYear()} Ariella. Tutti i diritti riservati.
+                    © {new Date().getFullYear()} Oleificio Minichiello. Tutti i diritti riservati.
                 </p>
 
                 {/* Social icons */}
