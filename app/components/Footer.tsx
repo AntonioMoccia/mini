@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Script from 'next/script';
 import { SOCIAL_LINKS } from '../lib/site';
 
 const socials = [
@@ -36,6 +37,11 @@ const socials = [
     },
 ];
 
+const legalLinks = [
+    { name: 'Privacy Policy', href: 'https://www.iubenda.com/privacy-policy/23359686' },
+    { name: 'Cookie Policy', href: 'https://www.iubenda.com/privacy-policy/23359686/cookie-policy' },
+];
+
 export default function Footer() {
     return (
         <footer className="w-full bg-black py-12 px-8 md:px-12">
@@ -53,6 +59,20 @@ export default function Footer() {
                     © {new Date().getFullYear()} Oleificio Minichiello. Tutti i diritti riservati.
                 </p>
 
+                {/* Link legali iubenda (aperti in overlay da iubenda.js) */}
+                <div className="flex items-center gap-6">
+                    {legalLinks.map(({ name, href }) => (
+                        <a
+                            key={name}
+                            href={href}
+                            title={name}
+                            className="iubenda-nostyle iubenda-noiframe iubenda-embed text-[#9e9e9e] text-xs tracking-widest uppercase font-light hover:text-[#D6AB5D] transition-colors duration-300"
+                        >
+                            {name}
+                        </a>
+                    ))}
+                </div>
+
                 {/* Social icons */}
                 <div className="flex items-center gap-6">
                     {socials.filter(link => !link.hidden).map(({ name, href, icon }) => (
@@ -69,6 +89,8 @@ export default function Footer() {
                     ))}
                 </div>
             </div>
+
+            <Script id="iubenda-embed" src="https://cdn.iubenda.com/iubenda.js" strategy="lazyOnload" />
         </footer>
     );
 }

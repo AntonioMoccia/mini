@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CONTACT_EMAIL, LOGO_PNG, OG_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_URL, SOCIAL_LINKS } from "./lib/site";
@@ -143,6 +144,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
+      <head>
+        {/* iubenda: cookie banner e gestione consenso, caricato prima di ogni altro script */}
+        <Script
+          id="iubenda-cs"
+          src="https://embeds.iubenda.com/widgets/c80d113f-9b05-4004-bca9-9347260ba199.js"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased`}
       >
