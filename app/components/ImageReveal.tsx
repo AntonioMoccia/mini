@@ -7,10 +7,11 @@ import { ScrollTrigger } from 'gsap/all'
 
 type Props = {
   url: string
+  alt: string
   className?: string
 }
 
-function ImageReveal({ url, className }: Props) {
+function ImageReveal({ url, alt, className }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const imageRef = useRef<HTMLImageElement | null>(null)
 
@@ -55,7 +56,7 @@ function ImageReveal({ url, className }: Props) {
       <Image
         ref={imageRef}
         src={url}
-        alt="image"
+        alt={alt}
         fill
         className="object-cover object-center scale-[1.15] will-change-transform"
         sizes="(max-width: 768px) 100vw, 33vw"

@@ -69,7 +69,7 @@ function Ariella() {
                     <Image
                         className=' max-h-[50vh] w-auto'
                         src="/media/bottle.png"
-                        alt="Next.js logo"
+                        alt="Bottiglia di olio extravergine d'oliva Ariella"
                         width={150}
                         height={200}
                         priority
@@ -86,7 +86,7 @@ function Ariella() {
                 <div className=' relative w-screen h-screen max-h-screen overflow-hidden'>
                     <Image
                         src="/media/hero-bg.png"
-                        alt="Sfondo"
+                        alt=""
                         fill
                         priority
                         className="object-cover object-center z-10"
@@ -133,6 +133,7 @@ function Ariella() {
                             <div className="col-span-12 md:col-span-4 md:col-start-1 flex justify-center md:justify-end">
                                 <ImageReveal
                                     url="/media/olio-1012.jpg"
+                                    alt="Bottiglia di olio extravergine d'oliva Ariella tra olive verdi e nere"
                                     className="relative overflow-hidden rounded-md w-full max-w-none md:max-w-[474px] aspect-[4/5] sm:aspect-[3/4] mt-8 md:mt-0"
                                 />
                             </div>
@@ -140,10 +141,10 @@ function Ariella() {
                                 <div className=' max-w-lg text-white'>
                                     <div className='w-full '>
                                         <AnimatedText>
-                                            <h1 className=' md:text-4xl text-xl font-bold'>
+                                            <h2 className=' md:text-4xl text-xl font-bold'>
                                                 OLIO EXTRAVERGINE
                                                 D’OLIVA 100% <span className=' text-[#D6AB5D]'>ITALIANO</span>
-                                            </h1>
+                                            </h2>
                                         </AnimatedText>
                                     </div>
                                     <div className='w-full mt-6'>

@@ -10,9 +10,9 @@ import Image from 'next/image';
 import Gallery, { GalleryImage } from '../components/Gallery';
 
 const galleryNuovoFrantoio: GalleryImage[] = [
-    { src: '/media/new/GBI05337.jpg', alt: 'Nuovo frantoio 1' },
-    { src: '/media/new/GBI05400.jpg', alt: 'Nuovo frantoio 2' },
-    { src: '/media/new/GBI05410.jpg', alt: 'Nuovo frantoio 3' },
+    { src: '/media/new/GBI05337.jpg', alt: 'Impianto di molitura a freddo per centrifugazione del nuovo frantoio Minichiello' },
+    { src: '/media/new/GBI05400.jpg', alt: 'Cisterne in acciaio inox per la conservazione dell\'olio extravergine' },
+    { src: '/media/new/GBI05410.jpg', alt: 'Silos in acciaio dell\'Oleificio Minichiello per lo stoccaggio dell\'olio' },
 ];
 
 export default function Storia() {
@@ -55,7 +55,7 @@ export default function Storia() {
                                     <div className="relative w-full aspect-4/5 overflow-hidden rounded-sm">
                                         <Image
                                             src="/media/old/GBI05355.jpg"
-                                            alt="Il vecchio frantoio di famiglia"
+                                            alt="Le macine in pietra del vecchio frantoio Minichiello di Grottaminarda"
                                             fill
                                             sizes="(max-width: 768px) 100vw, 50vw"
                                             className="object-cover"

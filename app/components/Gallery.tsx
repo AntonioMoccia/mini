@@ -88,6 +88,7 @@ export default function Gallery({ images }: GalleryProps) {
                     {/* Prev */}
                     <button
                         onClick={(e) => { e.stopPropagation(); prev(); }}
+                        aria-label="Immagine precedente"
                         className="absolute left-4 md:left-8 text-white/70 hover:text-white transition-colors duration-200 cursor-pointer"
                     >
                         <ChevronLeft size={40} strokeWidth={1} />
@@ -96,6 +97,7 @@ export default function Gallery({ images }: GalleryProps) {
                     {/* Next */}
                     <button
                         onClick={(e) => { e.stopPropagation(); next(); }}
+                        aria-label="Immagine successiva"
                         className="absolute right-4 md:right-8 text-white/70 hover:text-white transition-colors duration-200 cursor-pointer"
                     >
                         <ChevronRight size={40} strokeWidth={1} />
@@ -104,6 +106,7 @@ export default function Gallery({ images }: GalleryProps) {
                     {/* Close */}
                     <button
                         onClick={closeLightbox}
+                        aria-label="Chiudi galleria"
                         className="absolute top-6 right-6 text-white/70 hover:text-white hover:rotate-90 transition-all duration-200 cursor-pointer"
                     >
                         <X size={28} strokeWidth={1.5} />

@@ -28,7 +28,7 @@ function FullScreenVideo() {
     }, [])
 
     return (
-        <div id="irpinia" className=' w-screen py-20 mt-32 '>
+        <section id="irpinia" className=' w-screen py-20 mt-32 '>
             <div
                 ref={videoRef}
                 className="w-screen rounded-sm h-[60vh] md:h-screen overflow-hidden"
@@ -40,6 +40,7 @@ function FullScreenVideo() {
                     muted
                     loop
                     playsInline
+                    aria-label="Gli oliveti e il frantoio dell'Oleificio Minichiello in Irpinia"
                 >
                     <source src="/media/oleificio_minichiello_irpinia.mov" type="video/mp4" />
                 </video>
@@ -49,7 +50,7 @@ function FullScreenVideo() {
             <div className="px-5 my-10 w-screen flex items-center relative justify-center top-0 left-0 pointer-events-none">
                 <div className='max-w-[1442px] py-5 md:w-[50vw] text-white'>
                     <AnimatedText >
-                        <h1 className="text-white text-3xl font-bold mb-6">IRPINIA</h1>
+                        <h2 className="text-white text-3xl font-bold mb-6">IRPINIA</h2>
                     </AnimatedText>
                     <AnimatedText >
                         <p>
@@ -63,7 +64,7 @@ function FullScreenVideo() {
             </div>
           
 
-        </div>
+        </section>
     )
 }
 

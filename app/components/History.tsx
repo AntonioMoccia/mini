@@ -9,7 +9,7 @@ import AnimatedText from '@/app/components/AnimatedText'
 function History() {
     return (
 
-        <div id="storia" className='px-5 py-20 md:py-24 mb-10 w-screen flex bg-[#D6AB5D] justify-center items-center flex-col'>
+        <section id="storia" className='px-5 py-20 md:py-24 mb-10 w-screen flex bg-[#D6AB5D] justify-center items-center flex-col'>
             <div className=' md:w-[80vw] h-full max-w-[1442px] flex justify-center items-center'>
                 <div className=' w-full grid grid-cols-12  '>
 
@@ -17,9 +17,9 @@ function History() {
                         <div className=' max-w-lg text-white'>
                             <div className='w-full '>
                                 <AnimatedText>
-                                    <h1 className=' md:text-4xl text-xl font-bold'>
+                                    <h2 className=' md:text-4xl text-xl font-bold'>
                                       LA NOSTRA STORIA
-                                    </h1>
+                                    </h2>
                                 </AnimatedText>
                             </div>
                             <div className='w-full '>
@@ -44,12 +44,13 @@ function History() {
                     <div className="col-span-12 md:col-span-4 md:col-start-9 flex justify-center md:justify-end">
                         <ImageReveal
                            url="/media/GBI01691.jpg"
+                           alt="Un membro della famiglia Minichiello tra gli oliveti dell'Irpinia"
                             className="relative overflow-hidden rounded-md w-full max-w-none md:max-w-[474px] aspect-[4/5] sm:aspect-[3/4] mt-8 md:mt-0"
                         />
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
